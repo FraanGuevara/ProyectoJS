@@ -1,0 +1,19 @@
+{
+  "name": "proyectojs",
+  "version": "1.0.0",
+  "description": "Login Bar",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FraanGuevara/ProyectoJS.git"
+  },
+  "author": "FraanGuevara",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/FraanGuevara/ProyectoJS/issues"
+  },
+  "homepage": "https://github.com/FraanGuevara/ProyectoJS#readme"
+}

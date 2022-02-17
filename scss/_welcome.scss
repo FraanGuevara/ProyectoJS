@@ -1,0 +1,23 @@
+body{
+    background-image: url(../images/bar-bienvenida.jpeg);
+    background-size: cover;
+}
+
+.bienvenidos{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-content: center;
+    flex-direction: column;
+    &__text{
+        margin-top: 15%;
+        color: white;
+        font-size: 50px;
+        color: yellow;
+    }
+    &__boton{
+        margin-top: 10%;
+        height: 100px;
+        width: 200px;
+    }
+}
