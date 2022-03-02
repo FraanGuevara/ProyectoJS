@@ -1,10 +1,8 @@
 /* VARIABLES */
 
-let arrayPersonas = [];
 const reservaMesa = document.getElementById("reservaMesa");
 const tragoBarra = document.getElementById("tragoBarra");
 const comidaLlevar = document.getElementById("comidaLlevar");
-let inputSweetAlert = document.querySelectorAll(".swal2-file");
 
 
 
@@ -32,20 +30,17 @@ comidaLlevar.addEventListener("click", function(){
 /* Se usa async porque tengo que esperar a que se termine de ejecutar el solicitarNombre y luego redirigir */
 async function redireccionarReserva(){
     await solicitarNombre();
-    setTimeout(()=>{location.href="../pages/reserva.html";}, 1500)
-    guardarPersonas();
+    setTimeout(()=>{location.href="../pages/reserva.html";}, 1500);
     }
 
 async function redireccionarBarra(){
     await solicitarNombre();
-    setTimeout(()=>{location.href="../pages/barra.html";}, 1500)
-    guardarPersonas();
+    setTimeout(()=>{location.href="../pages/barra.html";}, 1500);
     } 
 
 async function redireccionarComida(){
     await solicitarNombre();
-    setTimeout(()=>{location.href="../pages/comidaParaLlevar.html";}, 1500)
-    guardarPersonas();
+    setTimeout(()=>{location.href="../pages/comidaParaLlevar.html";}, 1500);
     } 
 
 
@@ -67,14 +62,15 @@ let solicitarNombre = (async () => {
     })
     if (text) {
         Swal.fire(`Bienvenid@  ${text}`)
+        guardarPersonas(text)
     }
     })
 
 /* Funcion agregar a personas al arr */
 
-function guardarPersonas(){
+function guardarPersonas(text){
     let arrayPersonas = JSON.parse(localStorage.getItem("arrayPersonas")) || [];
-    arrayPersonas.push(inputSweetAlert);
+    arrayPersonas.push(text);
     // convierto mi array a JSON
     let arrayPersonasJSON = JSON.stringify(arrayPersonas);
     // guardo mi arr de personas en formato JSON en local storage
@@ -82,7 +78,8 @@ function guardarPersonas(){
     console.log(arrayPersonas)
 }
 
-console.log(inputSweetAlert)
+
+
 /* CONSULTARRR */
 
 
