@@ -5,12 +5,10 @@ body{
 
 .bienvenidos{
     display: flex;
-    justify-content: center;
-    text-align: center;
-    align-content: center;
     flex-direction: column;
+    text-align: center;
     &__text{
-        margin-top: 15%;
+        margin-top: 5%;
         color: white;
         font-size: 50px;
         color: yellow;
@@ -19,5 +17,64 @@ body{
         margin-top: 10%;
         height: 100px;
         width: 200px;
+        margin-bottom: 5%;
+    }
+}
+
+
+/* User Name entrada */
+.nombre{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    &__input{
+        width: 500px;
+        margin-bottom: 10%;
+        margin-top: 10%;
+    }
+}
+
+.card__boton1{
+    background-image: url(../images/Boton_seleccion/reserva-mesa.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 500px;
+    color: white;
+    margin: 2%;
+    justify-content: center;
+    border: none;
+    border-bottom: solid 1px white;
+    &--text{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-color: rgba(0, 0, 0, 0.5);
+        &-footer{
+            background-color: rgba(0, 0, 0, 0.5);
+            border: solid 1px white;
+            color: white !important;
+        }
+    }
+}
+
+.card__boton2{
+    @extend .card__boton1;
+    background-image: url(../images/Boton_seleccion/trago-en-barra.jpg);
+    &--text{
+        @extend .card__boton1--text;
+        &-footer{
+            @extend .card__boton1--text-footer
+        }
+    }
+}
+
+.card__boton3{
+    @extend .card__boton1;
+    background-image: url(../images/Boton_seleccion/comida-para-llevar.jpg);
+    &--text{
+        @extend .card__boton1--text;
+        &-footer{
+            @extend .card__boton1--text-footer
+        }
     }
 }

@@ -1,0 +1,27 @@
+.reservasDeMesas{
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    
+}
+
+.botonResAden{
+    border: solid 2px green;
+    width: 350px;
+    height: 350px;
+    margin: 3%;
+}
+
+.botonResAfu{
+    border: solid 2px red;
+    width: 350px;
+    height: 350px;
+    margin: 3%;
+}
+
+.mesas{
+    border: solid 2px yellow;
+    width: 150px;
+    height: 150px;
+
+}
