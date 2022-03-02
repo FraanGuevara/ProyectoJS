@@ -1,9 +1,10 @@
 /* VARIABLES */
 
+let arrayPersonas = [];
 const reservaMesa = document.getElementById("reservaMesa");
 const tragoBarra = document.getElementById("tragoBarra");
 const comidaLlevar = document.getElementById("comidaLlevar");
-let inputSweetAlert = document.querySelectorAll(".swal2-file")
+let inputSweetAlert = document.querySelectorAll(".swal2-file");
 
 
 
@@ -78,8 +79,10 @@ function guardarPersonas(){
     let arrayPersonasJSON = JSON.stringify(arrayPersonas);
     // guardo mi arr de personas en formato JSON en local storage
     localStorage.setItem("arrayPersonas", arrayPersonasJSON); 
+    console.log(arrayPersonas)
 }
 
+console.log(inputSweetAlert)
 /* CONSULTARRR */
 
 

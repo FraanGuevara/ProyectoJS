@@ -104,6 +104,13 @@ body {
   width: 350px;
   height: 350px;
   margin: 3%;
+  background-color: rgba(0, 128, 0, 0.5);
+}
+
+.botonResAden h2 {
+  color: white;
+  text-align: center;
+  padding: 25%;
 }
 
 .botonResAfu {
@@ -111,11 +118,22 @@ body {
   width: 350px;
   height: 350px;
   margin: 3%;
+  background-color: rgba(255, 0, 0, 0.5);
+}
+
+.botonResAfu h2 {
+  color: white;
+  text-align: center;
+  padding: 25%;
 }
 
 .mesas {
   border: solid 2px yellow;
   width: 150px;
   height: 150px;
+  color: yellow;
+  font-size: 20px;
+  font-weight: bolder;
+  text-align: center;
 }
 /*# sourceMappingURL=style.css.map */
