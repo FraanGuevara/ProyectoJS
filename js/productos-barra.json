@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "precio": 350,
+        "title": "Pinta de cerveza",
+        "img": "../images/img-productos-barra/pinta.jpg"
+    },
+    {
+        "id": 2,
+        "precio": 400,
+        "title": "Vaso de Fernet",
+        "img": "../images/img-productos-barra/fernet.jpg"
+    },
+    {
+        "id": 3,
+        "precio": 250,
+        "title": "Copa de vino",
+        "img": "../images/img-productos-barra/vino.jpg"
+    },
+    {
+        "id": 4,
+        "precio": 500,
+        "title": "Copa champagne",
+        "img": "../images/img-productos-barra/champagne.jpg"
+    },
+    {
+        "id": 5,
+        "precio": 200,
+        "title": "Gaseosa 500ml",
+        "img": "../images/img-productos-barra/gaseosa.jpg"
+    },
+    {
+        "id": 6,
+        "precio": 150,
+        "title": "Jugo 500ml",
+        "img": "../images/img-productos-barra/jugo.jpg"
+    }
+  ]
