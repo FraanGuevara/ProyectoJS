@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "precio": 350,
+        "title": "Papas Fritas",
+        "img": "../images/img-productos-comida/papasFritas.jpg"
+    },
+    {
+        "id": 2,
+        "precio": 700,
+        "title": "Hamburguesa",
+        "img": "../images/img-productos-comida/hamburguesa.jpg"
+    },
+    {
+        "id": 3,
+        "precio": 1000,
+        "title": "Pizza 8 porciones",
+        "img": "../images/img-productos-comida/pizza.jpg"
+    },
+    {
+        "id": 4,
+        "precio": 800,
+        "title": "12 empanadas",
+        "img": "../images/img-productos-comida/empanadas.jpg"
+    },
+    {
+        "id": 5,
+        "precio": 1600,
+        "title": "Sushi 16 piezas",
+        "img": "../images/img-productos-comida/sushi.jpg"
+    },
+    {
+        "id": 6,
+        "precio": 450,
+        "title": "Ensalada",
+        "img": "../images/img-productos-comida/ensalada.jpg"
+    }
+  ]

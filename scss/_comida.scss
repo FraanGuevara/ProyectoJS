@@ -1,0 +1,24 @@
+.contenedor__comida{
+    overflow: hidden;
+    margin: 50px auto;
+    background-color:rgba(255, 255, 255, 0.7) ;
+    font-family: 'Franklin Gothic', 'Impact';
+    font-weight: 900;
+}
+
+.btn-outline-danger, .btn-outline-success{
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+}
+
+#cardsComida{
+    & div{
+        & img{
+            object-fit:cover;
+            max-height: 200px;
+            
+            
+        }
+    }
+}

@@ -1,5 +1,5 @@
 /* VARIABLES */
-const cards = document.getElementById('cards');
+const cards = document.getElementById('cardsComida');
 const items = document.getElementById('items');
 const footer = document.getElementById('footer');
 const templateCard = document.getElementById('template-card').content ;
@@ -44,7 +44,7 @@ items.addEventListener('click', e =>{
 /* Funcion para que se consuma el json con los productos de la barra cuando cargue el DOM*/
 const fetchData = async () => {
     try {
-        const res = await fetch('../js/productos-barra.json');
+        const res = await fetch('../js/productos-comida.json');
         const data = await res.json();
         pintarCards(data);
     } catch (error) {
