@@ -4,45 +4,14 @@ body {
 }
 
 .bienvenidos {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   text-align: center;
 }
 
 .bienvenidos__text {
   margin-top: 5%;
-  color: white;
   font-size: 50px;
   color: yellow;
-}
-
-.bienvenidos__boton {
-  margin-top: 10%;
-  height: 100px;
-  width: 200px;
-  margin-bottom: 5%;
-}
-
-/* User Name entrada */
-.nombre {
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.nombre__input {
-  width: 500px;
-  margin-bottom: 10%;
-  margin-top: 10%;
+  text-shadow: 5px 5px 3px black;
 }
 
 .card__boton1, .card__boton2, .card__boton3 {
@@ -50,13 +19,20 @@ body {
   background-position: center;
   background-size: cover;
   height: 500px;
+  width: 400px;
   color: white;
-  margin: 2%;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  border: none;
-  border-bottom: solid 1px white;
+  margin: 5% auto;
+  padding: 0%;
+  border: solid 1px white;
+  -webkit-box-shadow: 15px 15px 10px black;
+          box-shadow: 15px 15px 10px black;
+}
+
+.card__boton1:hover, .card__boton2:hover, .card__boton3:hover {
+  left: 5px;
+  top: 10px;
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 
 .card__boton1--text, .card__boton2--text, .card__boton3--text {
@@ -87,6 +63,19 @@ body {
   background-image: url(../images/Boton_seleccion/comida-para-llevar.jpg);
 }
 
+/* .contenedor {
+    display: flex;
+    flex-direction: row; 
+    justify-content: center;
+} */
+/* @media (max-width: 1000px) {
+    .contenedor{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 10%;
+    }
+} */
 .reservasDeMesas {
   display: -webkit-box;
   display: -ms-flexbox;

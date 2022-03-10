@@ -5,19 +5,18 @@ const tragoBarra = document.getElementById("tragoBarra");
 const comidaLlevar = document.getElementById("comidaLlevar");
 
 
-
 /* EVENTOS */
 
 reservaMesa.addEventListener("click", function(){
-    redireccionarReserva();
+solicitarNombre(redireccionarReserva);
 })
 
 tragoBarra.addEventListener("click", function(){
-    redireccionarBarra();
+    solicitarNombre(redireccionarBarra);
 })
 
 comidaLlevar.addEventListener("click", function(){
-    redireccionarComida();
+    solicitarNombre(redireccionarComida);
 })
 
 
@@ -28,24 +27,22 @@ comidaLlevar.addEventListener("click", function(){
 
 /* Funciones para redireccionar a paginas HTML */
 /* Se usa async porque tengo que esperar a que se termine de ejecutar el solicitarNombre y luego redirigir */
-async function redireccionarReserva(){
-    await solicitarNombre();
+
+function redireccionarReserva(){
     setTimeout(()=>{location.href="../pages/reserva.html";}, 1500);
     }
 
-async function redireccionarBarra(){
-    await solicitarNombre();
+function redireccionarBarra(){
     setTimeout(()=>{location.href="../pages/barra.html";}, 1500);
     } 
 
-async function redireccionarComida(){
-    await solicitarNombre();
+function redireccionarComida(){
     setTimeout(()=>{location.href="../pages/comidaParaLlevar.html";}, 1500);
     } 
 
 
 /* Funcion para solicitar nombre */
-let solicitarNombre = (async () => { 
+let solicitarNombre = (async (callback) => { 
     const { value: text } = await Swal.fire({
         input: 'text',
         inputLabel: 'Por favor, ingrese su nombre',
@@ -63,6 +60,7 @@ let solicitarNombre = (async () => {
     if (text) {
         Swal.fire(`Bienvenid@  ${text}`)
         guardarPersonas(text)
+        callback()
     }
     })
 
