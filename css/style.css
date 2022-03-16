@@ -76,6 +76,14 @@ body {
         padding: 10%;
     }
 } */
+#reserva {
+  color: white;
+  font-family: 'Franklin Gothic', 'Impact';
+  font-weight: 900;
+  text-align: center;
+  -webkit-text-stroke: 1px black;
+}
+
 .reservasDeMesas {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -89,41 +97,56 @@ body {
 }
 
 .botonResAden {
-  border: solid 2px green;
+  border-radius: 10px;
   width: 350px;
   height: 350px;
   margin: 3%;
-  background-color: rgba(0, 128, 0, 0.5);
+  background-color: #198754;
+}
+
+.botonResAden:hover {
+  -webkit-box-shadow: 2px 2px 2px 10px rgba(25, 135, 84, 0.5);
+          box-shadow: 2px 2px 2px 10px rgba(25, 135, 84, 0.5);
 }
 
 .botonResAden h2 {
   color: white;
   text-align: center;
   padding: 25%;
+  -webkit-text-stroke: 1px black;
 }
 
 .botonResAfu {
-  border: solid 2px red;
+  border-radius: 10px;
   width: 350px;
   height: 350px;
   margin: 3%;
-  background-color: rgba(255, 0, 0, 0.5);
+  background-color: #dc3545;
+}
+
+.botonResAfu:hover {
+  -webkit-box-shadow: 2px 2px 2px 10px rgba(220, 53, 70, 0.5);
+          box-shadow: 2px 2px 2px 10px rgba(220, 53, 70, 0.5);
 }
 
 .botonResAfu h2 {
   color: white;
   text-align: center;
   padding: 25%;
+  -webkit-text-stroke: 1px black;
 }
 
 .mesas {
+  background-color: rgba(255, 255, 0, 0.233);
   border: solid 2px yellow;
+  border-radius: 5px;
   width: 150px;
   height: 150px;
   color: yellow;
   font-size: 20px;
   font-weight: bolder;
   text-align: center;
+  -webkit-text-stroke: 1px black;
 }
 
 .contenedor {

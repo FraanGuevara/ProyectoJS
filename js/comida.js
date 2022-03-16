@@ -166,7 +166,7 @@ const btnAccion = e =>{
 }
 
 function agregarNombrePed(){
-    h1.innerHTML =`Hola! <b style="color:blue;">${nombrePersona}</b> haz tu pedido para retirar en la barra` ;
+    h1.innerHTML =`Hola! <b style="color:yellow;">${nombrePersona}</b> haz tu pedido para llevar!` ;
     console.log(nombrePersona)
 }
 
