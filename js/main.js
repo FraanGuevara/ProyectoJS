@@ -1,3 +1,5 @@
+
+
 /* VARIABLES */
 
 const reservaMesa = document.getElementById("reservaMesa");
@@ -43,6 +45,7 @@ function redireccionarComida(){
 /* Funcion para solicitar nombre */
 let solicitarNombre = (async (callback) => { 
     const { value: text } = await Swal.fire({
+        color: 'white',
         input: 'text',
         inputLabel: 'Por favor, ingrese su nombre',
         inputPlaceholder: 'Escribe tu nombre aqui...',
@@ -50,6 +53,9 @@ let solicitarNombre = (async (callback) => {
         'aria-label': 'Type your message here'
         },
         showCancelButton: true,
+        confirmButtonColor:'rgb(255, 185, 0)',
+        background: ' #000000',
+        backdrop: 'rgba(50,100,132,0.4)',
         inputValidator: (value) => {
             if (!value) {
                 return 'Tu nombre no es valido'
@@ -57,7 +63,11 @@ let solicitarNombre = (async (callback) => {
         }    
     })
     if (text) {
-        Swal.fire(`Bienvenid@  ${text}`)
+        Swal.fire({
+            title:`Bienvenid@  ${text}`,
+            background: '#000000', color: 'white',
+            confirmButtonColor:'rgb(255, 185, 0)',
+            backdrop: 'rgba(50,100,132,0.4)',})
         guardarPersonas(text)
         callback()
     }
@@ -72,7 +82,7 @@ function guardarPersonas(text){
     let arrayPersonasJSON = JSON.stringify(arrayPersonas);
     // guardo mi arr de personas en formato JSON en local storage
     localStorage.setItem("arrayPersonas", arrayPersonasJSON); 
-    console.log(arrayPersonas)
+    
 }
 
 

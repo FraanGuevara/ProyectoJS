@@ -9,9 +9,8 @@ const fragment = document.createDocumentFragment();
 const h1 = document.querySelector('.nombreH1');
 let carrito= {};
 let arrayPersonasLocalStorage = JSON.parse(localStorage.getItem("arrayPersonas")) || [];
-console.log(arrayPersonasLocalStorage)
 let nombrePersona = arrayPersonasLocalStorage.pop();
-console.log(nombrePersona)
+
 
 
 
@@ -22,8 +21,8 @@ document-addEventListener("DOMContentLoaded", ()=>{
     fetchData();
     agregarNombrePed();
     /* Si hay algo en el carrito no se borra al recargar */
-    if (localStorage.getItem('carrito')){
-        carrito= JSON.parse(localStorage.getItem('carrito'));
+    if (localStorage.getItem('carritoBebidas')){
+        carrito= JSON.parse(localStorage.getItem('carritoBebidas'));
     pintarCarrito();
     }
 })
@@ -115,7 +114,7 @@ const pintarCarrito = () => {
     pintarFooter();
 
     /* Pasamos el JSON para que se puedan leer los objetos que se guardaron en local storage */
-    localStorage.setItem('carrito', JSON.stringify(carrito));
+    localStorage.setItem('carritoBebidas', JSON.stringify(carrito));
 }
 
 const pintarFooter = () =>{
@@ -166,7 +165,12 @@ const btnAccion = e =>{
 }
 
 function agregarNombrePed(){
-    h1.innerHTML =`Hola! <b style="color:yellow;">${nombrePersona}</b> haz tu pedido para retirar en la barra` ;
-    console.log(nombrePersona)
+    h1.innerHTML =`Hola! <b style="color:rgb(255, 185, 0);-webkit-text-stroke: 1px black;">${nombrePersona}</b> haz tu pedido para retirar en la barra` ;
+    
 }
 
+const btnConfirmar = document.getElementById('confirmar-carrito');
+    btnConfirmar.addEventListener('click', ()=>{
+        /* carrito = {}; */
+        pintarCarrito();
+    })

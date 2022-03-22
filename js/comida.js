@@ -22,8 +22,8 @@ document-addEventListener("DOMContentLoaded", ()=>{
     fetchData();
     agregarNombrePed();
     /* Si hay algo en el carrito no se borra al recargar */
-    if (localStorage.getItem('carrito')){
-        carrito= JSON.parse(localStorage.getItem('carrito'));
+    if (localStorage.getItem('carritoComidas')){
+        carrito= JSON.parse(localStorage.getItem('carritoComidas'));
     pintarCarrito();
     }
 })
@@ -115,7 +115,7 @@ const pintarCarrito = () => {
     pintarFooter();
 
     /* Pasamos el JSON para que se puedan leer los objetos que se guardaron en local storage */
-    localStorage.setItem('carrito', JSON.stringify(carrito));
+    localStorage.setItem('carritoComidas', JSON.stringify(carrito));
 }
 
 const pintarFooter = () =>{
@@ -166,7 +166,7 @@ const btnAccion = e =>{
 }
 
 function agregarNombrePed(){
-    h1.innerHTML =`Hola! <b style="color:yellow;">${nombrePersona}</b> haz tu pedido para llevar!` ;
+    h1.innerHTML =`Hola! <b style="color:rgb(255, 185, 0);-webkit-text-stroke: 1px black;">${nombrePersona}</b> haz tu pedido para llevar!` ;
     console.log(nombrePersona)
 }
 
