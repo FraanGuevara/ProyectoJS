@@ -1,11 +1,11 @@
 
 /* VARIABLES */
-const arrMesasDispAden = [1, 2, 3, 4, 5];
+let arrMesasDispAden = [];
 const botonReservaAdentro = document.querySelector(".botonResAden");
 const mesasDispAden = document.querySelector(".mesasDispAden");
 
 
-const arrMesasDispAfu = [1, 2, 3, 4, 5];
+let arrMesasDispAfu = [];
 const botonReservaAfuera = document.querySelector(".botonResAfu");
 const mesasDispAfu = document.querySelector(".mesasDispAfu");
 
@@ -18,42 +18,78 @@ let nombrePersona = arrayPersonasLocalStorage.pop();
 
 /* EVENTOS */
 document-addEventListener("DOMContentLoaded", ()=>{
-    agregarNombrePed()
+    agregarNombrePed();
+    mostrarMesasDisponiblesAden();
+    mostrarMesasDisponiblesAfu();
 })
 
 
 botonReservaAdentro.addEventListener("click", function(){
-    arrMesasDispAden.pop();
-    mesasVisibles(mesasDispAden, arrMesasDispAden)
+    localStorageMesasAdentro();
 })
 
 
 
 botonReservaAfuera.addEventListener("click", function(){
-    arrMesasDispAfu.pop();
-    mesasVisibles(mesasDispAfu, arrMesasDispAfu)
+    localStorageMesasAfuera()
 })
 
 
 
-/* FUNCIONES */
 
-/* Para que muestre la cantidad de mesas disponibles */
-mesasVisibles(mesasDispAden, arrMesasDispAden);
-mesasVisibles(mesasDispAfu, arrMesasDispAfu);
+/* MESAS DE ADENTRO */
 
+function localStorageMesasAdentro (){
 
-/* Funcion para que vaya mostrando la reduccion de mesas disponibles */
-function mesasVisibles(sectorMesas, arrMesasDispSector){
-    sectorMesas.innerHTML = "Contamos con " + arrMesasDispSector.length + " mesas disponibles";
+    let arrayMesas = JSON.parse(localStorage.getItem('arrayMesasDispAdentro')) || [1, 2, 3, 4, 5, 6];
 
-    /* If para cuando no haya mas mesas que sea redirigido hacia la pagina inicial */
-    /* if(arrMesasDispSector.length == [""]){
-        setTimeout(()=>{
-            location.href="../index.html";
-        },5000)
-    } */
+    arrayMesas.pop();
+    
+    mesasDispAden.innerHTML = "Contamos con " + arrayMesas.length + " mesas disponibles";
+
+    arrMesasDispAden = arrayMesas;
+
+    let arrayMesasJSON = JSON.stringify(arrayMesas);
+
+    localStorage.setItem('arrayMesasDispAdentro', arrayMesasJSON);
+
+    if(arrayMesas.length == [""]){
+        mesasDispAden.innerHTML = "No contamos con mesas disponibles en este sector"
+    }
 }
+
+
+function mostrarMesasDisponiblesAden(){
+    let arrayMesas = JSON.parse(localStorage.getItem('arrayMesasDispAdentro')) || [1, 2, 3, 4, 5, 6];
+    mesasDispAden.innerHTML = "Contamos con " + arrayMesas.length + " mesas disponibles";
+}
+
+
+/* MESAS DE AFUERA */
+function localStorageMesasAfuera (){
+
+    let arrayMesas = JSON.parse(localStorage.getItem('arrayMesasDispAfuera')) || [1, 2, 3, 4, 5, 6, 7, 8];
+
+    arrayMesas.pop();
+    
+    mesasDispAfu.innerHTML = "Contamos con " + arrayMesas.length + " mesas disponibles";
+
+    arrMesasDispAfu = arrayMesas;
+
+    let arrayMesasJSON = JSON.stringify(arrayMesas);
+
+    localStorage.setItem('arrayMesasDispAfuera', arrayMesasJSON);
+
+    if(arrayMesas.length == [""]){
+        mesasDispAden.innerHTML = "No contamos con mesas disponibles en este sector"
+    }
+}
+
+function mostrarMesasDisponiblesAfu(){
+    let arrayMesas = JSON.parse(localStorage.getItem('arrayMesasDispAfuera')) || [1, 2, 3, 4, 5, 6, 7, 8];
+    mesasDispAfu.innerHTML = "Contamos con " + arrayMesas.length + " mesas disponibles";
+}
+
 
 function agregarNombrePed(){
     h1.innerHTML =`Hola! <b style="color:rgb(255, 185, 0);-webkit-text-stroke: 1px black;">${nombrePersona}</b> donde vas a querer solicitar la mesa?` ;
