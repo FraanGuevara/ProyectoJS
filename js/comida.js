@@ -9,9 +9,8 @@ const fragment = document.createDocumentFragment();
 const h1 = document.querySelector('.nombreH1');
 let carrito = {};
 let arrayPersonasLocalStorage = JSON.parse(localStorage.getItem("arrayPersonas")) || [];
-console.log(arrayPersonasLocalStorage)
 let nombrePersona = arrayPersonasLocalStorage.pop();
-console.log(nombrePersona)
+
 
 const iconoCarrito = document.querySelector('#iconoCarritoComida');
 let spanCarrito = document.querySelector('#spanCarritoComida');
@@ -192,7 +191,6 @@ const btnAccion = e => {
 
 function agregarNombrePed() {
     h1.innerHTML = `Hola! <b style="color:rgb(255, 185, 0);-webkit-text-stroke: 1px black;">${nombrePersona}</b> haz tu pedido para llevar!`;
-    console.log(nombrePersona)
 }
 
 

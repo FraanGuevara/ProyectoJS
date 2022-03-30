@@ -38,7 +38,6 @@ botonReservaAdentro.addEventListener("click", function () {
 /* Eventos mesas afuera */
 botonReservaAfuera.addEventListener("click", function () {
     let arrayAfuera = JSON.parse(localStorage.getItem('arrayMesasDispAfuera'))  || [1, 2, 3, 4, 5, 6, 7, 8];
-    console.log(arrayAfuera);
     if(arrayAfuera.length > 0){
         seleccionMesa('afuera', localStorageMesasAfuera, redireccionarAIndex);
     }else{
