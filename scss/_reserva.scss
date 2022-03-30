@@ -10,11 +10,10 @@
     display: flex;
     align-items: center;
     justify-content:center;
-    
 }
 
 .botonResAden{
-    margin: 5% 3%;
+    margin: 80px 50px;
     border-radius: 10px;
     width: 350px;
     height: 50%;
@@ -33,7 +32,7 @@
 }
 
 .botonResAfu{
-    margin: 2% 3%;
+    margin: 30px 50px;
     border-radius: 10px;
     width: 350px;
     height: 50%;
@@ -72,6 +71,7 @@
     margin-top: 15px;
 }
 
+
 @media (max-width: 600px) {
     .mesas {
         padding: 5px;
@@ -82,4 +82,9 @@
         font-weight: 700;
         background: linear-gradient(to right, #141e30, #243b55); 
     }
+    .botonResAden{
+        margin: 5% 3%;}
+
+    .botonResAfu{
+        margin: 5% 3%;}
     }

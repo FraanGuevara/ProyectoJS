@@ -10,9 +10,12 @@ const h1 = document.querySelector('.nombreH1');
 let carrito = {};
 let arrayPersonasLocalStorage = JSON.parse(localStorage.getItem("arrayPersonas")) || [];
 let nombrePersona = arrayPersonasLocalStorage.pop();
-
 const iconoCarrito = document.querySelector('#iconoCarrito');
 let spanCarrito = document.querySelector('#spanCarrito');
+
+
+
+
 
 
 
@@ -50,6 +53,9 @@ window.addEventListener("scroll", function () {
     }
 })
 
+
+
+
 /* FUNCIONES */
 
 /* Funcion para que se consuma el json con los productos de la barra cuando cargue el DOM*/
@@ -70,8 +76,6 @@ const pintarCards = data => {
         templateCard.querySelector('p').textContent = producto.precio;
         templateCard.querySelector('img').setAttribute('src', producto.img);
         templateCard.querySelector('.btn-dark').dataset.id = producto.id;
-
-
         const clone = templateCard.cloneNode(true);
         fragment.appendChild(clone);
     })
@@ -163,6 +167,12 @@ const pintarFooter = () => {
         pintarCarrito();
         spanCarrito.textContent = '';
     })
+
+    const confirmarPedido = document.getElementById('confirmar-carrito');
+    /* para confirmar pedido */
+    confirmarPedido.addEventListener('click', function () {
+    confirmacionDePedido(nPrecio);
+    })
 }
 
 const btnAccion = e => {
@@ -192,7 +202,38 @@ function agregarNombrePed() {
 
 }
 
-const btnConfirmar = document.getElementById('confirmar-carrito');
-btnConfirmar.addEventListener('click', () => {
-    pintarCarrito();
-})
+function confirmacionDePedido(precioTotal) {
+    Swal.fire({
+        title: 'Desea confirmar su pedido?',
+        text: "¡No podrás revertir esto!",
+        color:'white',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#198754',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Si, deseo continuar',
+        background: ' hsla(202, 71%, 27%, 1)',
+        backdrop: 'rgba(50,100,132,0.4)',
+    }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire({
+                    title: 'Muchas gracias',
+                    text: `El pedido se confirmo correctamente, su total es : $${precioTotal} en breve sera redirigido`,
+                    icon: 'success',
+                    background: ' hsla(202, 71%, 27%, 1)',
+                    backdrop: 'rgba(50,100,132,0.4)',
+                    color:'white',
+                    confirmButtonColor: '#198754'
+                })
+                carrito = {};
+                pintarCarrito();
+                spanCarrito.textContent = '';
+                redireccionarAIndex();
+            }
+    })
+}
+
+/* Funcion para redireccionar cuando haya elegido la mesa */
+function redireccionarAIndex(){
+    setTimeout(()=>{location.href="../index.html";}, 4000);
+    } 

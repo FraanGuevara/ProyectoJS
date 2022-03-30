@@ -160,6 +160,12 @@ const pintarFooter = () => {
         pintarCarrito();
         spanCarritoComida.textContent = '';
     })
+
+    const confirmarPedido = document.getElementById('confirmar-carrito');
+    /* para confirmar pedido */
+    confirmarPedido.addEventListener('click', function () {
+    confirmacionDePedido(nPrecio);
+    })
 }
 
 const btnAccion = e => {
@@ -188,3 +194,40 @@ function agregarNombrePed() {
     h1.innerHTML = `Hola! <b style="color:rgb(255, 185, 0);-webkit-text-stroke: 1px black;">${nombrePersona}</b> haz tu pedido para llevar!`;
     console.log(nombrePersona)
 }
+
+
+function confirmacionDePedido(precioTotal) {
+    Swal.fire({
+        title: 'Desea confirmar su pedido?',
+        text: "¡No podrás revertir esto!",
+        color:'white',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#198754',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Si, deseo continuar',
+        background: ' hsla(202, 71%, 27%, 1)',
+        backdrop: 'rgba(50,100,132,0.4)',
+    }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire({
+                    title: 'Muchas gracias',
+                    text: `El pedido se confirmo correctamente, su total es : $${precioTotal} en breve sera redirigido`,
+                    icon: 'success',
+                    background: ' hsla(202, 71%, 27%, 1)',
+                    backdrop: 'rgba(50,100,132,0.4)',
+                    color:'white',
+                    confirmButtonColor: '#198754'
+                })
+                carrito = {};
+                pintarCarrito();
+                spanCarrito.textContent = '';
+                redireccionarAIndex();
+            }
+    })
+}
+
+/* Funcion para redireccionar cuando haya elegido la mesa */
+function redireccionarAIndex(){
+    setTimeout(()=>{location.href="../index.html";}, 4000);
+    } 

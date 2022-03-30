@@ -53,7 +53,8 @@ let solicitarNombre = (async (callback) => {
         'aria-label': 'Type your message here'
         },
         showCancelButton: true,
-        confirmButtonColor:'rgb(255, 185, 0)',
+        confirmButtonColor: '#198754',
+        cancelButtonColor: '#d33',
         background: ' hsla(202, 71%, 27%, 1)',
         backdrop: 'rgba(50,100,132,0.4)',
         inputValidator: (value) => {

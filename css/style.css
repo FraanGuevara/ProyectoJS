@@ -14,6 +14,12 @@ body {
   text-shadow: 5px 5px 3px black;
 }
 
+#copy {
+  color: wheat;
+  text-align: center;
+  font-size: 12px;
+}
+
 .card__boton1, .card__boton2, .card__boton3 {
   background-image: url(../images/Boton_seleccion/reserva-mesa.jpg);
   background-position: center;
@@ -91,7 +97,7 @@ body {
 }
 
 .botonResAden {
-  margin: 5% 3%;
+  margin: 80px 50px;
   border-radius: 10px;
   width: 350px;
   height: 50%;
@@ -115,7 +121,7 @@ body {
 }
 
 .botonResAfu {
-  margin: 2% 3%;
+  margin: 30px 50px;
   border-radius: 10px;
   width: 350px;
   height: 50%;
@@ -173,6 +179,12 @@ body {
     font-weight: 700;
     background: -webkit-gradient(linear, left top, right top, from(#141e30), to(#243b55));
     background: linear-gradient(to right, #141e30, #243b55);
+  }
+  .botonResAden {
+    margin: 5% 3%;
+  }
+  .botonResAfu {
+    margin: 5% 3%;
   }
 }
 
