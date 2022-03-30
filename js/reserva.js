@@ -9,7 +9,7 @@ const botonReservaAfuera = document.querySelector(".botonResAfu");
 const mesasDispAfu = document.querySelector(".mesasDispAfu");
 
 const h1 = document.querySelector('.nombreH1');
-let arrayPersonasLocalStorage = JSON.parse(localStorage.getItem("arrayPersonas")) || [];
+let arrayPersonasLocalStorage = JSON.parse(sessionStorage.getItem("arrayPersonas")) || [];
 let nombrePersona = arrayPersonasLocalStorage.pop();
 
 
@@ -26,7 +26,7 @@ document - addEventListener("DOMContentLoaded", () => {
 
 /* Evento mesas adentro */
 botonReservaAdentro.addEventListener("click", function () {
-    let array = JSON.parse(localStorage.getItem('arrayMesasDispAdentro')) || [1, 2, 3, 4, 5, 6];
+    let array = JSON.parse(sessionStorage.getItem('arrayMesasDispAdentro')) || [1, 2, 3, 4, 5, 6];
     if(array.length > 0){
         seleccionMesa('adentro', localStorageMesasAdentro, redireccionarAIndex);
     }else{
@@ -37,7 +37,7 @@ botonReservaAdentro.addEventListener("click", function () {
 
 /* Eventos mesas afuera */
 botonReservaAfuera.addEventListener("click", function () {
-    let arrayAfuera = JSON.parse(localStorage.getItem('arrayMesasDispAfuera'))  || [1, 2, 3, 4, 5, 6, 7, 8];
+    let arrayAfuera = JSON.parse(sessionStorage.getItem('arrayMesasDispAfuera'))  || [1, 2, 3, 4, 5, 6, 7, 8];
     if(arrayAfuera.length > 0){
         seleccionMesa('afuera', localStorageMesasAfuera, redireccionarAIndex);
     }else{
@@ -52,7 +52,7 @@ botonReservaAfuera.addEventListener("click", function () {
 
 function localStorageMesasAdentro() {
 
-    let arrayMesas = JSON.parse(localStorage.getItem('arrayMesasDispAdentro')) || [1, 2, 3, 4, 5, 6];
+    let arrayMesas = JSON.parse(sessionStorage.getItem('arrayMesasDispAdentro')) || [1, 2, 3, 4, 5, 6];
 
     arrayMesas.pop();
 
@@ -62,7 +62,7 @@ function localStorageMesasAdentro() {
 
     let arrayMesasJSON = JSON.stringify(arrayMesas);
 
-    localStorage.setItem('arrayMesasDispAdentro', arrayMesasJSON);
+    sessionStorage.setItem('arrayMesasDispAdentro', arrayMesasJSON);
 
     if (arrayMesas.length == [""]) {
         mesasDispAden.innerHTML = "No contamos con mesas disponibles en este sector"
@@ -70,7 +70,7 @@ function localStorageMesasAdentro() {
 }
 
 function mostrarMesasDisponiblesAden() {
-    let arrayMesas = JSON.parse(localStorage.getItem('arrayMesasDispAdentro')) || [1, 2, 3, 4, 5, 6];
+    let arrayMesas = JSON.parse(sessionStorage.getItem('arrayMesasDispAdentro')) || [1, 2, 3, 4, 5, 6];
     mesasDispAden.innerHTML = "Contamos con " + arrayMesas.length + " mesas disponibles";
 }
 
@@ -78,7 +78,7 @@ function mostrarMesasDisponiblesAden() {
 /* funciones MESAS DE AFUERA */
 function localStorageMesasAfuera() {
 
-    let arrayMesasAfuera = JSON.parse(localStorage.getItem('arrayMesasDispAfuera')) || [1, 2, 3, 4, 5, 6, 7, 8];
+    let arrayMesasAfuera = JSON.parse(sessionStorage.getItem('arrayMesasDispAfuera')) || [1, 2, 3, 4, 5, 6, 7, 8];
 
     arrayMesasAfuera.pop();
 
@@ -88,7 +88,7 @@ function localStorageMesasAfuera() {
 
     let arrayMesasJSON = JSON.stringify(arrayMesasAfuera);
 
-    localStorage.setItem('arrayMesasDispAfuera', arrayMesasJSON);
+    sessionStorage.setItem('arrayMesasDispAfuera', arrayMesasJSON);
 
     if (arrayMesasAfuera.length == [""]) {
         mesasDispAfu.innerHTML = "No contamos con mesas disponibles en este sector"
@@ -96,7 +96,7 @@ function localStorageMesasAfuera() {
 }
 
 function mostrarMesasDisponiblesAfu() {
-    let arrayMesas = JSON.parse(localStorage.getItem('arrayMesasDispAfuera')) || [1, 2, 3, 4, 5, 6, 7, 8];
+    let arrayMesas = JSON.parse(sessionStorage.getItem('arrayMesasDispAfuera')) || [1, 2, 3, 4, 5, 6, 7, 8];
     mesasDispAfu.innerHTML = "Contamos con " + arrayMesas.length + " mesas disponibles";
 }
 
