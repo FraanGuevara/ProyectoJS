@@ -9,7 +9,7 @@ const botonReservaAfuera = document.querySelector(".botonResAfu");
 const mesasDispAfu = document.querySelector(".mesasDispAfu");
 
 const h1 = document.querySelector('.nombreH1');
-let arrayPersonasLocalStorage = JSON.parse(sessionStorage.getItem("arrayPersonas")) || [];
+let arrayPersonasLocalStorage = JSON.parse(localStorage.getItem("arrayPersonas")) || [];
 let nombrePersona = arrayPersonasLocalStorage.pop();
 
 
