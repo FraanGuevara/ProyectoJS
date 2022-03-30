@@ -54,7 +54,7 @@ let solicitarNombre = (async (callback) => {
         },
         showCancelButton: true,
         confirmButtonColor:'rgb(255, 185, 0)',
-        background: ' #000000',
+        background: ' hsla(202, 71%, 27%, 1)',
         backdrop: 'rgba(50,100,132,0.4)',
         inputValidator: (value) => {
             if (!value) {
@@ -65,7 +65,7 @@ let solicitarNombre = (async (callback) => {
     if (text) {
         Swal.fire({
             title:`Bienvenid@  ${text}`,
-            background: '#000000', color: 'white',
+            background: 'hsla(202, 71%, 27%, 1)', color: 'white',
             confirmButtonColor:'rgb(255, 185, 0)',
             backdrop: 'rgba(50,100,132,0.4)',})
         guardarPersonas(text)

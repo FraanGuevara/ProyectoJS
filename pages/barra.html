@@ -1,105 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-<!-- Link Bootstrap -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-<!-- Link CSS Propio -->
-<link rel="stylesheet" href="../css/style.css">
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <!-- Link Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+  <!-- Link CSS Propio -->
+  <link rel="stylesheet" href="../css/style.css" />
 </head>
+
 <body>
-
-<!-- CONTENIDO HTML -->
-<div class="carritoBarra">
-    <a href="../index.html">
-        <img src="../images/Iconos/flechaAtras.svg" alt="" id="atrasBarra">
+  <!-- CONTENIDO HTML -->
+  <main class="carritoBarra">
+    <a href="../index.html" id="atrasBarra">
+      <img src="../images/Iconos/flechaAtras.svg" alt="" />
     </a>
-        <div class="container contenedor">
-            <br>
-            <h1 class="nombreH1"></h1>
-            <hr>
-            <br>
-            <div class="row" id="cards"></div>
-            <br>
-            <!-- Carrito -->
-            <table class="table">
-                <thead>
-                    <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Item</th>
-                    <th scope="col">Cantidad</th>
-                    <th scope="col">Acción</th>
-                    <th scope="col">Total</th>
-                    </tr>
-                </thead>
-                <tbody id="items"></tbody>
-                <tfoot>
-                    <tr id="footer">
-                    <th scope="row" colspan="5">Carrito vacío - comience a comprar!</th>
-                    </tr>
-                </tfoot>
-                </table>
-        </div>
-</div>
-
-
-
-    
-<!-- TEMPLATES -->
-
-<!-- template de cards -->
-<template id="template-card">
-    <div class="col-6 mb-4 col-md-2">
-        <div class="card">
-            <img src="" alt="" class="card-img-top img-fluid">
-            <div class="card-body">
-                <h5>Titulo</h5>
-                <p>precio</p>
-                <button class="btn btn-dark">Comprar</button>
-            </div>
-        </div>
+    <div class="container contenedor">
+      <br />
+      <h1 class="nombreH1"></h1>
+      <hr />
+      <br />
+      <div class="row" id="cards"></div>
+      <br />
+      <!-- Carrito -->
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Item</th>
+            <th scope="col">Cantidad</th>
+            <th scope="col">Acción</th>
+            <th scope="col">Total</th>
+          </tr>
+        </thead>
+        <tbody id="items"></tbody>
+        <tfoot>
+          <tr id="footer">
+            <th scope="row" colspan="5">
+              Carrito vacío - comience a comprar!
+            </th>
+          </tr>
+        </tfoot>
+      </table>
     </div>
-</template>
+  </main>
 
+  <footer>
+    <a href="#confirmar-carrito" id="iconoCarrito" class="">
+      <div>
+        <img src="../images/Iconos/shopping-cart.svg" alt="" class="imagenCarrito" />
+        <span id="spanCarrito">0</span>
+      </div>
+    </a>
+  </footer>
 
-<!-- template del carrito -->
-<template id="template-carrito">
+  <!-- TEMPLATES -->
+
+  <!-- template de cards -->
+  <template id="template-card">
+    <div class="col-6 mb-4 col-md-2">
+      <div class="card">
+        <img src="" alt="" class="card-img-top img-fluid" />
+        <div class="card-body">
+          <h5>Titulo</h5>
+          <p>precio</p>
+          <button class="btn btn-dark">Comprar</button>
+        </div>
+      </div>
+    </div>
+  </template>
+
+  <!-- template del carrito -->
+  <template id="template-carrito">
     <tr>
-        <th scope="row">id</th>
-        <td>Café</td>
-        <td>1</td>
-        <td>
-            <button class="btn btn-outline-success btn-sm">
-                +
-            </button>
-            <button class="btn btn-outline-danger btn-sm">
-                -
-            </button>
-        </td>
-        <td>$ <span>500</span></td>
+      <th scope="row">id</th>
+      <td>Café</td>
+      <td>1</td>
+      <td>
+        <button class="btn btn-outline-success btn-sm">+</button>
+        <button class="btn btn-outline-danger btn-sm">-</button>
+      </td>
+      <td>$ <span>500</span></td>
     </tr>
-</template>
+  </template>
 
-
-<!-- template del footer -->
-<template id="template-footer">
+  <!-- template del footer -->
+  <template id="template-footer">
     <th scope="row" colspan="2">Total productos</th>
     <td>10</td>
     <td>
-        <button class="btn btn-warning btn-sm" id="vaciar-carrito">
-            LIMPIAR PEDIDO
-        </button>
-        <button class="btn btn-info btn-sm" id="confirmar-carrito">
-            CONFIRMAR PEDIDO
-        </button>
+      <button class="btn btn-warning btn-sm" id="vaciar-carrito">
+        LIMPIAR PEDIDO
+      </button>
+      <button class="btn btn-info btn-sm" id="confirmar-carrito">
+        CONFIRMAR PEDIDO
+      </button>
     </td>
     <td class="font-weight-bold">$ <span>5000</span></td>
-</template>
+  </template>
 
-
-<script src="../js/barra.js"></script>
+  <script src="../js/barra.js"></script>
 </body>
+
 </html>

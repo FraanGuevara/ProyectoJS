@@ -21,6 +21,7 @@ body {
   height: 500px;
   width: 400px;
   color: white;
+  -webkit-text-stroke: 0.3px #ffb900;
   margin: 5% auto;
   padding: 0%;
   border: solid 1px white;
@@ -63,19 +64,12 @@ body {
   background-image: url(../images/Boton_seleccion/comida-para-llevar.jpg);
 }
 
-/* .contenedor {
-    display: flex;
-    flex-direction: row; 
-    justify-content: center;
-} */
-/* @media (max-width: 1000px) {
-    .contenedor{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 10%;
-    }
-} */
+@media (max-width: 600px) {
+  .bienvenidos {
+    margin: 10%;
+  }
+}
+
 #reserva {
   color: white;
   font-family: 'Franklin Gothic', 'Impact';
@@ -146,18 +140,19 @@ body {
 
 .mesas {
   margin: 20px;
-  background-color: rgba(255, 255, 0, 0.5);
+  background: -webkit-gradient(linear, left top, right top, from(#141e30), to(#243b55));
+  background: linear-gradient(to right, #141e30, #243b55);
   border: solid 2px #ffb900;
-  /* border-radius: 5px; */
+  border-radius: 15px;
   width: 150px;
   height: 150px;
-  color: #ffb900;
+  color: wheat;
   font-size: 20px;
   font-weight: bolder;
   text-align: center;
   -webkit-text-stroke: 1px black;
-  -webkit-box-shadow: -0.5em 0.5em 2.5px 3px #7c6a02;
-          box-shadow: -0.5em 0.5em 2.5px 3px #7c6a02;
+  -webkit-box-shadow: -0.5em 0.5em 2.5px 3px rgba(0, 0, 0, 0.76);
+          box-shadow: -0.5em 0.5em 2.5px 3px rgba(0, 0, 0, 0.76);
 }
 
 #atrasReserva {
@@ -168,24 +163,33 @@ body {
   margin-top: 15px;
 }
 
+@media (max-width: 600px) {
+  .mesas {
+    padding: 5px;
+    border-radius: 15px;
+    font-size: 15px;
+    color: wheat;
+    -webkit-text-stroke: 0;
+    font-weight: 700;
+    background: -webkit-gradient(linear, left top, right top, from(#141e30), to(#243b55));
+    background: linear-gradient(to right, #141e30, #243b55);
+  }
+}
+
 .contenedor {
   overflow: hidden;
   margin: auto;
   background-color: rgba(255, 255, 255, 0.7);
   font-family: 'Franklin Gothic', 'Impact';
-  font-weight: 900;
+  font-weight: 700;
+  font-size: 15px;
 }
 
-.btn-outline-danger, .btn-outline-success {
+.btn-outline-danger,
+.btn-outline-success {
   width: 40px;
   height: 40px;
   font-size: 20px;
-}
-
-#atrasBarra {
-  margin-left: 20px;
-  margin-bottom: 0%;
-  margin-top: 15px;
 }
 
 .carritoBarra {
@@ -194,10 +198,75 @@ body {
   display: flex;
 }
 
+#atrasBarra {
+  margin-left: 20px;
+  margin-bottom: 0%;
+  margin-top: 15px;
+  height: 50px;
+}
+
 #cards div img {
   -o-object-fit: scale-down;
      object-fit: scale-down;
   max-height: 200px;
+}
+
+#iconoCarrito {
+  position: fixed;
+  display: inline;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  text-align: right;
+  padding-right: 30px;
+}
+
+#iconoCarrito span {
+  background-color: red;
+  border-radius: 20px;
+  padding: 0 3px;
+  position: absolute;
+  margin: -7px -30px;
+}
+
+.desaparecerCarrito {
+  display: none !important;
+}
+
+.imagenCarrito {
+  width: 50px;
+  height: auto;
+  background-color: rgba(255, 187, 0, 0.7);
+  border: solid 3px black;
+  border-radius: 15px;
+  padding: 10px;
+}
+
+@media (max-width: 600px) {
+  .carritoBarra {
+    display: -ms-grid;
+    display: grid;
+    position: relative;
+  }
+  .contenedor {
+    width: 365px;
+    margin: 2%;
+    font-size: 13px;
+    font-weight: 500;
+  }
+  #iconoCarrito {
+    margin-bottom: 15px;
+    margin-left: 80%;
+    width: auto;
+    display: inline;
+  }
+}
+
+@media (min-width: 650px) {
+  #iconoCarrito {
+    display: none;
+  }
 }
 
 .contenedor__comida {
@@ -205,13 +274,21 @@ body {
   margin: auto;
   background-color: rgba(255, 255, 255, 0.7);
   font-family: 'Franklin Gothic', 'Impact';
-  font-weight: 900;
+  font-weight: 700;
+  font-size: 15px;
 }
 
-.btn-outline-danger, .btn-outline-success {
+.btn-outline-danger,
+.btn-outline-success {
   width: 40px;
   height: 40px;
   font-size: 20px;
+}
+
+.carritoComida {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 #cardsComida div img {
@@ -226,9 +303,60 @@ body {
   margin-top: 15px;
 }
 
-.carritoComida {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+#iconoCarritoComida {
+  position: fixed;
+  display: inline;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  text-align: right;
+  padding-right: 30px;
+}
+
+#iconoCarritoComida span {
+  background-color: red;
+  border-radius: 20px;
+  padding: 0 3px;
+  position: absolute;
+  margin: -7px -30px;
+}
+
+.desaparecerCarrito {
+  display: none !important;
+}
+
+.imagenCarrito {
+  width: 50px;
+  height: auto;
+  background-color: rgba(255, 187, 0, 0.7);
+  border-radius: 15px;
+  padding: 10px;
+}
+
+@media (max-width: 600px) {
+  .carritoComida {
+    display: -ms-grid;
+    display: grid;
+    position: relative;
+  }
+  .contenedor__comida {
+    width: 365px;
+    margin: 2%;
+    font-size: 13px;
+    font-weight: 500;
+  }
+  #iconoCarritoComida {
+    margin-bottom: 15px;
+    margin-left: 80%;
+    width: auto;
+    display: inline;
+  }
+}
+
+@media (min-width: 650px) {
+  #iconoCarritoComida {
+    display: none;
+  }
 }
 /*# sourceMappingURL=style.css.map */

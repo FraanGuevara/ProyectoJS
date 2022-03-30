@@ -1,32 +1,95 @@
-.contenedor__comida{
+.contenedor__comida {
     overflow: hidden;
     margin: auto;
-    background-color:rgba(255, 255, 255, 0.7) ;
+    background-color: rgba(255, 255, 255, 0.7);
     font-family: 'Franklin Gothic', 'Impact';
-    font-weight: 900;
+    font-weight: 700;
+    font-size: 15px;
 }
 
-.btn-outline-danger, .btn-outline-success{
+.btn-outline-danger,
+.btn-outline-success {
     width: 40px;
     height: 40px;
     font-size: 20px;
 }
 
-#cardsComida{
-    & div{
-        & img{
-            object-fit:cover;
+.carritoComida {
+    display: flex
+}
+
+#cardsComida {
+    & div {
+        & img {
+            object-fit: cover;
             max-height: 200px;
         }
     }
 }
 
-#atrasComida{
+#atrasComida {
     margin-left: 20px;
     margin-bottom: 0%;
     margin-top: 15px;
 }
 
-.carritoComida{
-    display: flex;
+
+#iconoCarritoComida {
+    position: fixed;
+    display: inline;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    text-align: right;
+    padding-right: 30px;
+
+    & span {
+        background-color: rgba(255, 0, 0, 1);
+        border-radius: 20px;
+        padding: 0 3px;
+        position: absolute;
+        margin: -7px -30px;
+    }
+}
+
+.desaparecerCarrito {
+    display: none !important;
+}
+
+.imagenCarrito {
+    width: 50px;
+    height: auto;
+    background-color: rgba(255, 187, 0, 0.7);
+    border-radius: 15px;
+    padding: 10px;
+}
+
+@media (max-width: 600px) {
+    .carritoComida {
+        display: grid;
+        position: relative
+    }
+
+    .contenedor__comida {
+        width: 365px;
+        margin: 2%;
+        font-size: 13px;
+        font-weight: 500;
+    }
+
+    #iconoCarritoComida{
+        margin-bottom: 15px;
+        margin-left: 80%;
+        width: auto;
+        display: inline;
+    }
+
+}
+
+@media (min-width: 650px) {
+    #iconoCarritoComida {
+        display: none;
+    }
+
 }
